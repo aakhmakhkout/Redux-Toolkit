@@ -14,17 +14,15 @@ const submitHandler =(elem) => {
     setuserInp("")
 }
   return (
-    <div>
+    <div className='h-20 mt-10 flex justify-center '>
         <form onSubmit={(elem)=> {
-            submitHandler(elem)
-            
-            
-        }}>
-            <input type="text" placeholder='search anything' value={userInp || ""} onChange={(elem)=> {
+            submitHandler(elem)       
+        }} className='flex items-center bg-[#6e15c2] rounded-xl h-full w-[80%] px-5 justify-between border border-white/20'>
+            <input className='w-[80%] bg-black/20 px-5 h-[80%] rounded-xl text-white outline-none' type="text" placeholder='search anything' value={userInp || ""} onChange={(elem)=> {
                 const value = elem.target.value
                 setuserInp(value)
             }}/>
-            <button>Search</button>
+            <button className='bg-[orange] py-3 px-7 rounded-xl font-bold active:scale-95'>Search</button>
         </form>
     </div>
   )
