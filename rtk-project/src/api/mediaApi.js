@@ -7,7 +7,7 @@ const PEXELS_KEY = import.meta.env.VITE_PEXELS_KEY;
 
 
 export async function fetchPhotos(query, page=1, per_page=20) {
-    console.log("fetchingdata")
+    
     const response = await axios.get("https://api.unsplash.com/search/photos", {
         params:{query, page, per_page},
         headers:{Authorization:`Client-ID ${UNSPLASH_KEY}`}
@@ -23,9 +23,9 @@ export async function fetchVideos(query, page=1, per_page=20) {
     });
     return response.data
 }
-export async function fetchGifs(query, page=1, per_page=20) {
+export async function fetchGifs(query, per_page=20) {
     const response = await axios.get("https://api.giphy.com/v1/gifs/search", {
-        params:{q:query, limit:per_page, offset:page, api_key:GIPHY_KEY},
+        params:{q:query, limit:per_page, api_key:GIPHY_KEY},
         
     });
     return response.data
